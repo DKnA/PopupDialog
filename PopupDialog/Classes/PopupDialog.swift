@@ -167,11 +167,11 @@ open class PopupDialog: UIViewController {
     // MARK: - View life cycle
 
     /// Replaces controller view with popup view
-    public override func loadView() {
+    open override func loadView() {
         view = PopupDialogContainerView(frame: UIScreen.main.bounds)
     }
 
-    public override func viewWillAppear(_ animated: Bool) {
+    open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         guard !initialized else { return }
@@ -180,7 +180,7 @@ open class PopupDialog: UIViewController {
         initialized = true
     }
 
-    public override func viewWillDisappear(_ animated: Bool) {
+    open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         removeObservers()
     }
